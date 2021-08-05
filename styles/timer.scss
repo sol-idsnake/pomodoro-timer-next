@@ -1,0 +1,52 @@
+$bg-blue: rgba(63, 112, 162, 0.5);
+
+.timer {
+  align-items: center;
+  background-color: $bg-blue;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 2rem 1rem;
+
+  .settings {
+    display: flex;
+    gap: 10px;
+
+    button {
+      background: none;
+      border: transparent;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+      font-family: "Roboto";
+      font-size: 16px;
+      padding: 0.5rem 1rem;
+
+      &.active {
+        background-color: darken($bg-blue, 20%);
+      }
+    }
+  }
+
+  .display {
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+
+  .controls {
+    input {
+      background-color: #fff;
+      border-radius: 5px;
+      border-style: solid;
+      cursor: pointer;
+      padding: 1rem 2rem;
+      font-family: "Open Sans", sans-serif;
+      font-size: 20px;
+    }
+  }
+}
