@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-// interface DefaultProps {
-//   isSetTo: string;
-// }
-
-// Todo:
-// change time on click of setting
-
-const Settings = (props) => {
+const Settings = ({ setIsSetTo }) => {
   const [selected, setSelected] = useState(null);
-
-  console.log(props, 'changeHandler');
 
   useEffect(() => {
     if (!selected) {
@@ -23,6 +14,7 @@ const Settings = (props) => {
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.currentTarget;
 
+    setIsSetTo(target.name);
     setSelected(target);
   };
 

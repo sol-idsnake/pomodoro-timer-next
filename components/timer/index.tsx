@@ -9,8 +9,8 @@ const Index = () => {
 
   return (
     <div className="timer">
-      <Settings changeHandler={setIsSetTo} />
-      <Display isRunning={isRunning} isSetTo={isSetTo} />
+      <Settings setIsSetTo={setIsSetTo} />
+      <Display isRunning={isRunning} isSetTo={isSetTo} setIsRunning={setIsRunning} />
       <Controls state={{ isRunning, setIsRunning }} />
     </div>
   );
