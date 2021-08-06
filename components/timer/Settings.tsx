@@ -18,35 +18,29 @@ const Settings = ({ setIsSetTo }) => {
     setSelected(target);
   };
 
+  const buttons = [
+    { name: 'pomodoro', proper: 'Pomodoro' },
+    { name: 'short-break', proper: 'Short Break' },
+    { name: 'long-break', proper: 'Long Break' },
+  ];
+
   return (
     <div className="settings">
-      <button
-        key="701"
-        name="pomodoro"
-        onClick={handleClick}
-        type="button"
-        className={selected && selected.name === 'pomodoro' ? 'active' : null}
-      >
-        Pomodoro
-      </button>
-      <button
-        key="802"
-        name="short-break"
-        onClick={handleClick}
-        type="button"
-        className={selected && selected.name === 'short-break' ? 'active' : null}
-      >
-        Short Break
-      </button>
-      <button
-        key="903"
-        name="long-break"
-        onClick={handleClick}
-        type="button"
-        className={selected && selected.name === 'long-break' ? 'active' : null}
-      >
-        Long Break
-      </button>
+      {buttons.map((button) => {
+        const classes = selected && selected.name === button.name ? 'active' : null;
+
+        return (
+          <button
+            key={`setting-button-${button.name}`}
+            type="button"
+            name={button.name}
+            className={classes}
+            onClick={handleClick}
+          >
+            {button.proper}
+          </button>
+        );
+      })}
     </div>
   );
 };
