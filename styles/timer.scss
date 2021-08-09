@@ -1,18 +1,19 @@
 $bg-blue: rgba(63, 112, 162, 0.5);
 
 .timer {
-  align-items: center;
   background-color: $bg-blue;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(20px, auto) auto auto;
+  justify-items: center;
   margin: 0 auto;
   max-width: 500px;
   padding: 2rem 1rem;
 
   .settings {
     display: flex;
-    gap: 10px;
+    // justify-content: center;
 
     button {
       background: none;

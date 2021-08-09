@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Settings = ({ setIsSetTo }) => {
+const Settings = ({ setIsSetTo, isRunning, setError }) => {
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {
@@ -13,6 +13,11 @@ const Settings = ({ setIsSetTo }) => {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     const target = event.currentTarget;
+    const clickWhileRunning = isRunning || false;
+
+    if (clickWhileRunning) {
+      setError('Timer is running. Are you sure you want to switch?');
+    }
 
     setIsSetTo(target.name);
     setSelected(target);
