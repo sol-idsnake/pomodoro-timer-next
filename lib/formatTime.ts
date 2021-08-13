@@ -1,4 +1,4 @@
-const formatTimer = (time: number) => {
+const formatTime = (time: number) => {
   if (time <= 0) {
     return `00:00`;
   }
@@ -12,4 +12,4 @@ const formatTimer = (time: number) => {
   return `${mins}:${secs}`;
 };
 
-export default formatTimer;
+export default formatTime;

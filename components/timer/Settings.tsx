@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const Settings = ({ setIsSetTo, isRunning, setError }) => {
+const Settings = () => {
   const [selected, setSelected] = useState(null);
 
   useEffect(() => {

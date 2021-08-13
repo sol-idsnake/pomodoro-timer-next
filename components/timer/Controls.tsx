@@ -1,31 +1,17 @@
 import React from 'react';
+import useTimer from '../../lib/timerHooks';
 
-interface ControlProps {
-  state: {
-    isRunning: boolean;
-    setIsRunning: React.Dispatch<React.SetStateAction<boolean>>;
-  };
-}
+const Controls = () => {
+  const { errorMsg, isRunning, isPaused, seconds, handleStart, handlePause } = useTimer();
 
-const Controls = ({ state }: ControlProps) => {
-  const { isRunning, setIsRunning } = state;
-
-  const handleControlClick = (event: React.SyntheticEvent<HTMLInputElement>) => {
-    const cmd = event.currentTarget.value.toLowerCase();
-
-    if (cmd === 'start') {
-      setIsRunning(true);
-    } else if (cmd === 'stop') {
-      setIsRunning(false);
-    }
-  };
+  console.log(seconds, 'seconds in Controls');
 
   return (
     <div className="controls">
       {isRunning ? (
-        <input type="button" value="Stop" onClick={handleControlClick} />
+        <input type="button" value="Stop" onClick={handlePause} />
       ) : (
-        <input type="button" value="Start" onClick={handleControlClick} />
+        <input type="button" value="Start" onClick={handleStart} />
       )}
     </div>
   );
